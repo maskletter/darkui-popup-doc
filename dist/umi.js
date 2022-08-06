@@ -2986,7 +2986,7 @@
               exact: !0,
               meta: {
                 filePath: 'docs/index.md',
-                updatedTime: 1659786862e3,
+                updatedTime: 1659790779e3,
                 hero: {
                   title: 'darkui-popup',
                   desc: '<div class="markdown"><p>\u4e13\u6ce8\u4e8ereact\u5f39\u7a97\u7ec4\u4ef6\u529f\u80fd</p></div>',
@@ -19855,7 +19855,7 @@
           previewerProps: {
             sources: {
               _: {
-                tsx: "import React, { useState } from 'react';\n// \u5f15\u5165\u6837\u5f0f\u6587\u4ef6\nimport \"@darkui/popup/es/style.css\";\n// \u52a0\u8f7d\u7ec4\u4ef6\nimport { Popup } from '@darkui/popup';\n\nexport default () => {\n\n  const [visibility, setVisibility] = useState(false)\n\n  return <div>\n\n    <button onClick={() => setVisibility(true)}>\u6253\u5f00\u5f39\u7a97</button>\n    <Popup\n      visibility={visibility}\n      onCancel={() => setVisibility(false)}\n      borderRadius={10}\n    >\n      <div style={{padding:'20px 30px'}}>\n        Hello,world\n      </div>\n    </Popup>\n  </div>\n\n}",
+                tsx: "import React, { useState } from 'react';\n// \u5f15\u5165\u6837\u5f0f\u6587\u4ef6\nimport '@darkui/popup/es/style.css';\n// \u52a0\u8f7d\u7ec4\u4ef6\nimport { Popup } from '@darkui/popup';\n\nexport default () => {\n  const [visibility, setVisibility] = useState(false);\n\n  return (\n    <div>\n      <button onClick={() => setVisibility(true)}>\u6253\u5f00\u5f39\u7a97</button>\n      <Popup\n        visibility={visibility}\n        onCancel={() => setVisibility(false)}\n        borderRadius={10}\n      >\n        <div style={{ padding: '20px 30px' }}>Hello,world</div>\n      </Popup>\n    </div>\n  );\n};",
               },
             },
             dependencies: {
@@ -19929,7 +19929,7 @@
           previewerProps: {
             sources: {
               _: {
-                tsx: "/* eslint-disable */\nimport React from 'react';\nimport { Show } from '@darkui/popup';\n\nexport default () => {\n\n  const popup1 = async (direction?: any) => {\n    const instance = await Show({\n      direction,\n      content: () => <h1 style={{color:'#666'}}>\u6d4b\u8bd51-content</h1>,\n      onCancel(ss) {\n        instance.close();\n      },\n    });\n  };\n\n  return <div>\n\n    <button onClick={() => popup1()}>\u6253\u5f00\u5f39\u7a97</button>\n  </div>\n\n}",
+                tsx: "/* eslint-disable */\nimport React from 'react';\nimport { Show } from '@darkui/popup';\n\nexport default () => {\n  const popup1 = async (direction?: any) => {\n    const instance = await Show({\n      direction,\n      content: () => <h1 style={{ color: '#666' }}>\u6d4b\u8bd51-content</h1>,\n      onCancel(ss) {\n        instance.close();\n      },\n    });\n  };\n\n  return (\n    <div>\n      <button onClick={() => popup1()}>\u6253\u5f00\u5f39\u7a97</button>\n    </div>\n  );\n};",
               },
             },
             dependencies: {
@@ -20014,7 +20014,7 @@
           previewerProps: {
             sources: {
               _: {
-                tsx: "import React from 'react';\nimport { getQueueInfo, Queue } from '@darkui/popup';\n\nexport default () => {\n\n  const popup1 = async (direction?: any) => {\n    await Queue([\n      () => <div style={{padding:'20px 30px'}}>\n        \u7b2c\u4e00\u4e2a\u5f39\u7a97\n      </div>,\n      () => <div style={{padding:'20px 30px'}}>\n        \u7b2c\u4e8c\u4e2a\u5f39\u7a97\n      </div>,\n      () => <div style={{padding:'20px 30px'}}>\n        \u7b2c\u4e09\u4e2a\u5f39\u7a97\n      </div>\n    ]);\n    alert('\u5168\u90e8\u52a0\u8f7d\u5b8c\u6210\u4e86')\n  };\n\n  return <div>\n\n    <button onClick={() => popup1()}>\u6253\u5f00\u5f39\u7a97</button>\n  </div>\n\n}",
+                tsx: "import React from 'react';\nimport { getQueueInfo, Queue } from '@darkui/popup';\n\nexport default () => {\n  const popup1 = async (direction?: any) => {\n    await Queue([\n      () => <div style={{ padding: '20px 30px' }}>\u7b2c\u4e00\u4e2a\u5f39\u7a97</div>,\n      () => <div style={{ padding: '20px 30px' }}>\u7b2c\u4e8c\u4e2a\u5f39\u7a97</div>,\n      () => <div style={{ padding: '20px 30px' }}>\u7b2c\u4e09\u4e2a\u5f39\u7a97</div>,\n    ]);\n    alert('\u5168\u90e8\u52a0\u8f7d\u5b8c\u6210\u4e86');\n  };\n\n  return (\n    <div>\n      <button onClick={() => popup1()}>\u6253\u5f00\u5f39\u7a97</button>\n    </div>\n  );\n};",
               },
             },
             dependencies: {
