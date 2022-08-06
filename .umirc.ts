@@ -4,6 +4,7 @@ export default defineConfig({
   title: '@darkui/popup',
   mode: 'site',
   base: '/darkui-popup-doc/dist',
+  publicPath: './',
   navs: [
     null,
     {

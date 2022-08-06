@@ -49,7 +49,7 @@
     (n.o = function (e, t) {
       return Object.prototype.hasOwnProperty.call(e, t);
     }),
-    (n.p = '/'),
+    (n.p = './'),
     n((n.s = 0));
 })({
   '++zV': function (e, t, n) {
@@ -21772,7 +21772,7 @@
   },
   RGYn: function (e) {
     e.exports = JSON.parse(
-      '{"menus":{"en-US":{"*":[{"path":"/","title":"\u5feb\u901f\u5b89\u88c5","meta":{}}],"/usage":[{"title":"\u4f7f\u7528\u65b9\u5f0f","meta":{"__fallback":true},"children":[{"path":"/usage/basic","title":"\u5feb\u901f\u4e0a\u624b","meta":{}},{"path":"/usage/senior","title":"\u9ad8\u7ea7\u7528\u6cd5","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"path":"/usage","title":"\u5feb\u901f\u4e0a\u624b","order":1},{"title":"GitHub","path":"https://github.com/umijs/dumi"}]},"title":"@darkui/popup","logo":"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F30%2F20200330091314_yNVUZ.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662343294&t=9b711c998b52764f1c28fecabfb831af","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
+      '{"menus":{"en-US":{"*":[{"path":"/","title":"\u5feb\u901f\u5b89\u88c5","meta":{}}],"/usage":[{"title":"\u4f7f\u7528\u65b9\u5f0f","meta":{"__fallback":true},"children":[{"path":"/usage/basic","title":"\u5feb\u901f\u4e0a\u624b","meta":{}},{"path":"/usage/senior","title":"\u9ad8\u7ea7\u7528\u6cd5","meta":{}}]}]}},"locales":[{"name":"en-US","label":"English"}],"navs":{"en-US":[{"path":"/usage","title":"\u5feb\u901f\u4e0a\u624b","order":1},{"title":"GitHub","path":"https://github.com/maskletter/darkui-popup"}]},"title":"@darkui/popup","logo":"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202003%2F30%2F20200330091314_yNVUZ.thumb.1000_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1662343294&t=9b711c998b52764f1c28fecabfb831af","mode":"site","repository":{"url":"","branch":"master"},"theme":{}}',
     );
   },
   RK3t: function (e, t, n) {
