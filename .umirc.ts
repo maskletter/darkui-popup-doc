@@ -3,11 +3,12 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   title: '@darkui/popup',
   mode: 'site',
+  base: '/darkui-popup-doc/dist',
   navs: [
     null,
     {
       title: 'GitHub',
-      path: 'https://github.com/umijs/dumi',
+      path: 'https://github.com/maskletter/darkui-popup',
     },
   ],
   styles: [
