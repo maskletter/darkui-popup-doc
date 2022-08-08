@@ -5,6 +5,8 @@ export default defineConfig({
   mode: 'site',
   base: '/darkui-popup-doc/dist',
   publicPath: './',
+  history: { type: 'hash' },
+  hash: true,
   navs: [
     null,
     {

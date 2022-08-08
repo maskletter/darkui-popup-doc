@@ -46448,10 +46448,10 @@
     window.routerBase && (o.basename = window.routerBase);
     var a = Object({ NODE_ENV: 'production' }).__IS_SERVER
         ? null
-        : Object(r['a'])(o),
+        : Object(r['b'])(o),
       i = function () {
         var e = arguments.length > 0 && void 0 !== arguments[0] && arguments[0];
-        return e || (a = Object(r['a'])(o)), a;
+        return e || (a = Object(r['b'])(o)), a;
       };
   },
   or5M: function (e, t, n) {
