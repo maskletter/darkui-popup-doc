@@ -180,34 +180,11 @@ export default () => {
 };
 ```
 
-## toast
+## toast(内置)
 
 ```tsx
 import React from 'react';
-import { ShowController } from '@darkui/popup';
-
-let controller = null;
-let clearToastTimeout = null;
-function toast(msg) {
-  if (!controller) {
-    controller = new ShowController(undefined, { destory: false });
-  }
-  controller.append({
-    bg: 'transparent',
-    wrapperBg: 'rgba(0,0,0,0.8)',
-    pointerEvents: true,
-    borderRadius: '10px',
-    replace: true,
-    zIndex: 9999,
-    content: () => (
-      <div style={{ color: 'white', padding: '10px 20px' }}>{msg}</div>
-    ),
-  });
-  clearTimeout(clearToastTimeout);
-  clearToastTimeout = setTimeout(() => {
-    controller.closeAll();
-  }, 3000);
-}
+import { toast } from '@darkui/popup';
 
 export default () => {
   const popup = () => {
@@ -219,6 +196,18 @@ export default () => {
     </div>
   );
 };
+```
+
+接收参数
+
+```ts
+const toast: (
+  msg: string,
+  options?: {
+    duration?: number;
+    className?: string;
+  },
+) => Promise;
 ```
 
 ## loading
@@ -271,53 +260,17 @@ export default () => {
 };
 ```
 
-## Dialog
+## Dialog(内置)
 
 ```tsx
 import React from 'react';
-import { ShowController } from '@darkui/popup';
-
-let controller = null;
-function Dialog() {
-  if (!controller) {
-    controller = new ShowController(undefined, { destory: false });
-  }
-  let resolve = null;
-  let reject = null;
-  controller.append({
-    borderRadius: '10px',
-    replace: true,
-    zIndex: 9999,
-    onCancel: close,
-    content: () => (
-      <div style={{ width: 300, padding: '10px 20px' }}>
-        <div style={{ textAlign: 'center', lineHeight: '60px' }}>
-          确认要关闭弹窗吗
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <button onClick={close}>取消</button>
-          <button onClick={confirm}>确定</button>
-        </div>
-      </div>
-    ),
-  });
-  return new Promise((_resolve, _reject) => {
-    resolve = _resolve;
-    reject = _reject;
-  });
-  function close() {
-    reject();
-    controller.closeAll();
-  }
-  function confirm() {
-    resolve();
-    controller.closeAll();
-  }
-}
+import { dialog } from '@darkui/popup';
 
 export default () => {
   const popup = () => {
-    Dialog()
+    dialog({
+      content: '确定要关闭弹窗吗',
+    })
       .then(() => {
         alert('点击了确定');
       })
@@ -333,81 +286,51 @@ export default () => {
 };
 ```
 
-## actionsheet
+接收参数
+
+```ts
+interface DialogProps {
+  title?: string;
+  content: string;
+  cancelText?: string | ((loading: boolean) => JSX.Element | string);
+  confirmText?: string | ((loading: boolean) => JSX.Element | string);
+  showCancel?: boolean;
+  className?: string;
+  /**元素点击事件，可以设置async/callback来进入loading状态 */
+  onConfirm?: (callback: Function) => void;
+  /**元素点击事件，可以设置async/callback来进入loading状态 */
+  onCancel?: (callback: Function) => void;
+  /**获取当前控制器，用于关闭 */
+  getController?: (callback: () => ShowController) => void;
+  /**是否允许loading过程中关闭 */
+  allowLoadingCancel?: boolean;
+}
+```
+
+## actionsheet(内置)
 
 ```tsx
 import React from 'react';
-import { ShowController } from '@darkui/popup';
-
-let controller = null;
-function Actionsheet() {
-  if (!controller) {
-    controller = new ShowController(undefined, { destory: false });
-  }
-  let resolve = null;
-  let reject = null;
-  controller.append({
-    borderRadius: '10px 10px 0px 0px',
-    replace: true,
-    zIndex: 9999,
-    direction: 'bottom',
-    onCancel: close,
-    content: () => (
-      <div style={{ padding: '10px 20px' }}>
-        <div
-          style={{
-            textAlign: 'center',
-            lineHeight: '60px',
-            fontWeight: 'bold',
-          }}
-        >
-          确认要关闭弹窗吗
-        </div>
-        <div style={{ textAlign: 'center' }}>
-          <div onClick={() => confirm('内容1')} style={{ lineHeight: '36px' }}>
-            内容1
-          </div>
-          <div onClick={() => confirm('内容2')} style={{ lineHeight: '36px' }}>
-            内容2
-          </div>
-          <div onClick={() => confirm('内容3')} style={{ lineHeight: '36px' }}>
-            内容3
-          </div>
-          <div onClick={() => confirm('内容4')} style={{ lineHeight: '36px' }}>
-            内容4
-          </div>
-          <div
-            onClick={close}
-            style={{ lineHeight: '36px', borderTop: '5px solid #f5f5f5' }}
-          >
-            取消
-          </div>
-        </div>
-      </div>
-    ),
-  });
-  return new Promise((_resolve, _reject) => {
-    resolve = _resolve;
-    reject = _reject;
-  });
-  function close() {
-    reject();
-    controller.closeAll();
-  }
-  function confirm(data) {
-    resolve(data);
-    controller.closeAll();
-  }
-}
+import { actionSheet, toast } from '@darkui/popup';
 
 const popup = () => {
-  Actionsheet()
+  actionSheet({
+    list: [
+      { text: 'aaaaa' },
+      {
+        text: (ld) => (!ld ? 'bbbbb(带loading)' : 'bbbbb-加载中'),
+        onClick(c) {
+          setTimeout(() => c(), 2000);
+        },
+      },
+      { text: 'ccccc' },
+      { text: 'ddddd' },
+    ],
+  })
     .then((data) => {
-      alert('点击了' + data);
+      toast(JSON.stringify(data));
     })
-    .catch(() => {
-      alert('点击了取消');
-    });
+    .catch(() => {});
 };
 
 export default () => {
@@ -417,4 +340,21 @@ export default () => {
     </div>
   );
 };
+```
+
+结束参数
+
+```ts
+interface ActionSheetProps {
+  list: Array<{
+    text: string | ((loading: boolean) => JSX.Element | string);
+    /**元素点击事件，可以设置async/callback来进入loading状态 */
+    onClick?: (callback: Function) => void;
+  }>;
+  title?: string;
+  /**获取当前控制器，用于关闭 */
+  getController?: (callback: () => ShowController) => void;
+  /**是否允许loading过程中关闭 */
+  allowLoadingCancel?: boolean;
+}
 ```
