@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  title: '@darkui/popup',
+  title: 'darkui',
   mode: 'site',
   base: '/darkui-popup-doc/dist',
   publicPath: './',
@@ -10,8 +10,12 @@ export default defineConfig({
   navs: [
     null,
     {
-      title: 'GitHub',
+      title: 'GitHub/popup',
       path: 'https://github.com/maskletter/darkui-popup',
+    },
+    {
+      title: 'GitHub/transition',
+      path: 'https://github.com/maskletter/react-transition',
     },
   ],
   styles: [

@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "@darkui/popup": "^0.0.6",
+    "@darkui/react-transition": "^0.0.4",
     "vant": "^3.5.3",
     "vue": "^3.2.37"
   }
