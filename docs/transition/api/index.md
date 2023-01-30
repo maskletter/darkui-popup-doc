@@ -2,7 +2,7 @@
 title: Api
 ---
 
-## Props：
+## Props
 
 <code>name</code>- string，用于自动生成 CSS 过渡类名。例如：name: 'fade' 将自动拓展为 .fade-enter，.fade-enter-active 等。<br />
 <code>appear</code> - boolean，是否在初始渲染时使用过渡。默认为 false。<br />
