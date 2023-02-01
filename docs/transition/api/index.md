@@ -2,6 +2,13 @@
 title: Api
 ---
 
+## Component
+
+<code>Transition</code>，等同于 vue.transition<br />
+<code>TransitionGroup</code>，等同于 vue.transition-group<br />
+<code>Transition.Children</code>，整个动画组件的核心，处理动画的进程离场效果，支持 transtion 的全部 api 配置<br />
+<code>TransitionGroup.Css</code>，TransitionGroup 的的子元素增强组件，配置 Transition.Children，可以实现更平滑的列表过渡
+
 ## Props
 
 <code>name</code>- string，用于自动生成 CSS 过渡类名。例如：name: 'fade' 将自动拓展为 .fade-enter，.fade-enter-active 等。<br />

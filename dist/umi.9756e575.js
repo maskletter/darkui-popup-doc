@@ -3760,9 +3760,10 @@
               exact: !0,
               meta: {
                 filePath: 'docs/transition/api/index.md',
-                updatedTime: 1675055324e3,
+                updatedTime: 1675057126e3,
                 title: 'Api',
                 slugs: [
+                  { depth: 2, value: 'Component', heading: 'component' },
                   { depth: 2, value: 'Props', heading: 'props' },
                   { depth: 2, value: '\u4e8b\u4ef6', heading: '\u4e8b\u4ef6' },
                 ],
@@ -13925,6 +13926,31 @@
           a.a.createElement(
             'div',
             { className: 'markdown' },
+            a.a.createElement(
+              'h2',
+              { id: 'component' },
+              a.a.createElement(
+                o['AnchorLink'],
+                { to: '#component', 'aria-hidden': 'true', tabIndex: -1 },
+                a.a.createElement('span', { className: 'icon icon-link' }),
+              ),
+              'Component',
+            ),
+            a.a.createElement(
+              'p',
+              null,
+              a.a.createElement('code', null, 'Transition'),
+              '\uff0c\u7b49\u540c\u4e8evue.transition',
+              a.a.createElement('br', null),
+              a.a.createElement('code', null, 'TransitionGroup'),
+              '\uff0c\u7b49\u540c\u4e8evue.transition-group',
+              a.a.createElement('br', null),
+              a.a.createElement('code', null, 'Transition.Children'),
+              '\uff0c\u6574\u4e2a\u52a8\u753b\u7ec4\u4ef6\u7684\u6838\u5fc3\uff0c\u5904\u7406\u52a8\u753b\u7684\u8fdb\u7a0b\u79bb\u573a\u6548\u679c\uff0c\u652f\u6301transtion\u7684\u5168\u90e8api\u914d\u7f6e',
+              a.a.createElement('br', null),
+              a.a.createElement('code', null, 'TransitionGroup.Css'),
+              '\uff0cTransitionGroup\u7684\u7684\u5b50\u5143\u7d20\u589e\u5f3a\u7ec4\u4ef6\uff0c\u914d\u7f6eTransition.Children\uff0c\u53ef\u4ee5\u5b9e\u73b0\u66f4\u5e73\u6ed1\u7684\u5217\u8868\u8fc7\u6e21',
+            ),
             a.a.createElement(
               'h2',
               { id: 'props' },
